@@ -1,0 +1,16 @@
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\Covid19Tracker.Services.dll
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\Covid19Tracker.Services.pdb
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\obj\Debug\Covid19Tracker.Services.csprojAssemblyReference.cache
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\obj\Debug\Covid19Tracker.Services.csproj.CoreCompileInputs.cache
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\obj\Debug\Covid19Tracker.Services.dll
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\obj\Debug\Covid19Tracker.Services.pdb
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\Covid19Tracker.Services.dll.config
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\EntityFramework.dll
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\EntityFramework.xml
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\obj\Debug\Covid19Tracker.Services.csproj.CopyComplete
