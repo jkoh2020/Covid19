@@ -9,5 +9,6 @@ namespace Covid19Tracker.Data
    public class County
     {
         // This is just a test
+        // This is another test
     }
 }
