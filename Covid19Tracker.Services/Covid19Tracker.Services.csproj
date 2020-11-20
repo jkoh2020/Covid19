@@ -54,12 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CountyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Covid19Tracker.Data\Covid19Tracker.Data.csproj">
+      <Project>{562C634E-502B-47BE-B451-6514BACAA2BB}</Project>
+      <Name>Covid19Tracker.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Covid19Tracker.Models\Covid19Tracker.Models.csproj">
+      <Project>{5050A9A7-A8A1-4E21-9312-73D440ABEFA2}</Project>
+      <Name>Covid19Tracker.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
