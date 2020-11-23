@@ -34,7 +34,7 @@ namespace Covid19Tracker.Services
             }
         }
 
-        // Posing county data
+        // Posting county data 
 
         public bool CreatePostData(PostCountyData model)
         {
@@ -74,6 +74,8 @@ namespace Covid19Tracker.Services
             }
         }
 
+
+        // Get County Data
         public IEnumerable<GetCountiesData> GetCountyData()
         {
             using (var ctx = new ApplicationDbContext())
