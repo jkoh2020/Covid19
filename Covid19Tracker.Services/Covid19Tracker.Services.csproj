@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountyDataService.cs" />
     <Compile Include="CountyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

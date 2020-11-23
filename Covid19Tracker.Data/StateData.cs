@@ -12,11 +12,11 @@ namespace Covid19Tracker.Data
     {
         [Key]
         public int DataId { get; set; }
-        public Guid UserId { get; set; }
         public DateTime Today { get; set; }
         public int TodayTests { get; set; }
         public int TodayConfirmedCases { get; set; }
         public int TodayDeaths { get; set; }
+        public Guid UserId { get; set; }
 
         public int StateId { get; set; }
         [ForeignKey(nameof(StateId))]

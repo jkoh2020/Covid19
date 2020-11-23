@@ -37,3 +37,6 @@ C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Mig
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.csproj.GenerateResource.cache
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.additional.resources
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.changedata.resources
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.additonaldata.resources
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.nothing.resources
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.newdatabase.resources
