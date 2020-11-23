@@ -67,5 +67,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Covid19Tracker.Data\Covid19Tracker.Data.csproj">
+      <Project>{562C634E-502B-47BE-B451-6514BACAA2BB}</Project>
+      <Name>Covid19Tracker.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

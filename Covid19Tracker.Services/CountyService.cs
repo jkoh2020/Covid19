@@ -24,7 +24,8 @@ namespace Covid19Tracker.Services
             {
                 UserId = _userId,
                 CountyName = model.CountyName,
-                Population = model.Population
+                Population = model.Population,
+               
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -34,25 +35,7 @@ namespace Covid19Tracker.Services
             }
         }
 
-        // Posing county data
-
-        public bool CreatePostData(PostCountyData model)
-        {
-            var entity = new CountyData()
-            {
-                UserId = _userId,
-                Date = model.Date,
-                TodayTests = model.TodayTests,
-                TodayConfirmedCases = model.TodayConfirmedCases,
-                TodayDeaths = model.TodayDeaths
-            };
-
-            using (var ctx = new ApplicationDbContext())
-            {
-                ctx.CountiesData.Add(entity);
-                return ctx.SaveChanges() == 1;
-            }
-        }
+        
 
         // Get County
 
@@ -68,32 +51,14 @@ namespace Covid19Tracker.Services
                         {
                             CountyId = e.CountyId,
                             CountyName = e.CountyName,
-                            Population = e.Population
+                            Population = e.Population,
+                            //CountyData = e.CountyData
                         });
                 return query.ToArray();
             }
         }
 
-        public IEnumerable<GetCountiesData> GetCountyData()
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var query =
-                    ctx
-                        .CountiesData
-                        .Where(e => e.UserId == _userId)
-                        .Select(e => new GetCountiesData
-                        {
-
-                            DataId = e.DataId,
-                            Date = e.Date,
-                            TodayTests = e.TodayTests,
-                            TodayConfirmedCases = e.TodayConfirmedCases,
-                            TodayDeaths = e.TodayDeaths
-                        });
-                return query.ToArray();
-            }
-        }
+        
     }
 }
 

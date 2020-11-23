@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Covid19Tracker.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,6 @@ namespace Covid19Tracker.Models
         public Guid UserId { get; set; }
         public string CountyName { get; set; }
         public int Population { get; set; }
+        // public List<CountyData> CountyData {get;set;}
     }
 }

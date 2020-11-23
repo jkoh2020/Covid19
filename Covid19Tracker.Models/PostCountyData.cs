@@ -9,7 +9,8 @@ namespace Covid19Tracker.Models
 {
     public class PostCountyData
     {
-        public int CountyId { get; set; }
+        [Key]
+        public int Id { get; set; }
 
         [Required]
         public DateTime Date { get; set; }
@@ -19,6 +20,7 @@ namespace Covid19Tracker.Models
         public int TodayConfirmedCases { get; set; }
         [Required]
         public int TodayDeaths { get; set; }
+        public int CountyId { get; set; }
         public int TotalTests { get; set; }
         public int TotalConfirmedCases { get; set; }
         public int TotalDeaths { get; set; }
