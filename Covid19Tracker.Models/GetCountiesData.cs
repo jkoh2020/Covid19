@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Covid19Tracker.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,6 @@ namespace Covid19Tracker.Models
         public int TodayTests { get; set; }
         public int TodayConfirmedCases { get; set; }
         public int TodayDeaths { get; set; }
+        public virtual List<County> County { get; set; }
     }
 }
