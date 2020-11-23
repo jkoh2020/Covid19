@@ -52,7 +52,8 @@ namespace Covid19Tracker.Services
                             CountyId = e.CountyId,
                             CountyName = e.CountyName,
                             Population = e.Population,
-                          //  CountyData = e.CountyData
+                            CountyData = e.CountyData
+                            
                         });
                 return query.ToArray();
             }

@@ -7,29 +7,26 @@ namespace Covid19Tracker.Data.Migrations
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.CountyJoin",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        CountyId = c.Int(nullable: false),
-                        DataId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.County", t => t.CountyId, cascadeDelete: true)
-                .ForeignKey("dbo.CountyData", t => t.DataId, cascadeDelete: true)
-                .Index(t => t.CountyId)
-                .Index(t => t.DataId);
-            
+            DropForeignKey("dbo.StateData", "StateId", "dbo.State");
+            DropForeignKey("dbo.CountyData", "CountyId", "dbo.County");
+            DropIndex("dbo.CountyData", new[] { "CountyId" });
+            DropIndex("dbo.StateData", new[] { "StateId" });
+            AddColumn("dbo.County", "CountyData_DataId", c => c.Int());
+            CreateIndex("dbo.County", "CountyData_DataId");
+            AddForeignKey("dbo.County", "CountyData_DataId", "dbo.CountyData", "DataId");
+            DropColumn("dbo.StateData", "StateId");
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.CountyJoin", "DataId", "dbo.CountyData");
-            DropForeignKey("dbo.CountyJoin", "CountyId", "dbo.County");
-            DropIndex("dbo.CountyJoin", new[] { "DataId" });
-            DropIndex("dbo.CountyJoin", new[] { "CountyId" });
-            DropTable("dbo.CountyJoin");
+            AddColumn("dbo.StateData", "StateId", c => c.Int(nullable: false));
+            DropForeignKey("dbo.County", "CountyData_DataId", "dbo.CountyData");
+            DropIndex("dbo.County", new[] { "CountyData_DataId" });
+            DropColumn("dbo.County", "CountyData_DataId");
+            CreateIndex("dbo.StateData", "StateId");
+            CreateIndex("dbo.CountyData", "CountyId");
+            AddForeignKey("dbo.CountyData", "CountyId", "dbo.County", "CountyId", cascadeDelete: true);
+            AddForeignKey("dbo.StateData", "StateId", "dbo.State", "StateId", cascadeDelete: true);
         }
     }
 }

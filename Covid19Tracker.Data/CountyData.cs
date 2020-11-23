@@ -21,6 +21,7 @@ namespace Covid19Tracker.Data
         public int RecordId { get; set; }
         public Guid UserId { get; set; }
         public int TotalTests { get; set; }
+        //public virtual List<County> County { get; set; }
         
         
         //[ForeignKey(nameof(CountyId))]

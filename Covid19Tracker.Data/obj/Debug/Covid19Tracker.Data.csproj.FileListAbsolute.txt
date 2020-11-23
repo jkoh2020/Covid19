@@ -40,3 +40,4 @@ C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Mig
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.additonaldata.resources
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.nothing.resources
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.newdatabase.resources
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.jason2.resources
