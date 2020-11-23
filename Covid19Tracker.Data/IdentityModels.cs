@@ -39,6 +39,7 @@ namespace Covid19Tracker.WebAPI.Models
         public DbSet<State> States { get; set; }
         public DbSet<StateData> StatesData { get; set; }
         
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

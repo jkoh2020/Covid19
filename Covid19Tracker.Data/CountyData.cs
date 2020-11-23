@@ -23,7 +23,7 @@ namespace Covid19Tracker.Data
         public int TotalTests { get; set; }
         
         
-        [ForeignKey(nameof(CountyId))]
-        public virtual County County { get; set; }
+        //[ForeignKey(nameof(CountyId))]
+        //public virtual County County { get; set; }
     }
 }

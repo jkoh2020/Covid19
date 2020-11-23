@@ -100,6 +100,18 @@ namespace Covid19Tracker.WebAPI.Controllers
             return InternalServerError(); // 500
         }
 
-       
+        [HttpGet]
+        public async Task<IHttpActionResult> GetCountyById(int id)
+        {
+            County county = await _context.Counties.FindAsync(id);
+
+            if (county != null)
+            {
+                return Ok(county); // Status code http: 200
+            }
+
+            return NotFound(); // 404
+        }
+
     }
 }

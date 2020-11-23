@@ -17,7 +17,8 @@ namespace Covid19Tracker.Data
         public string CountyName { get; set; }
         public int Population { get; set; }
         public Guid UserId { get; set; }
-       // public virtual List<CountyData> CountyData { get; set; }
-        
+        public object CountyJoin { get; set; }
+        public virtual List<CountyData> CountyData { get; set; }
+
     }
 }
