@@ -18,8 +18,8 @@ namespace Covid19Tracker.Data
         public int TodayDeaths { get; set; }
         public Guid UserId { get; set; }
 
-        //public int StateId { get; set; }
-        //[ForeignKey(nameof(StateId))]
-        //public virtual State State { get; set; }
+        public int StateId { get; set; }
+        [ForeignKey(nameof(StateId))]
+        public virtual State State { get; set; }
     }
 }

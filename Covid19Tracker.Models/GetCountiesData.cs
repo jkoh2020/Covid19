@@ -16,6 +16,6 @@ namespace Covid19Tracker.Models
         public int TodayTests { get; set; }
         public int TodayConfirmedCases { get; set; }
         public int TodayDeaths { get; set; }
-        public virtual List<County> County { get; set; }
+      //  public virtual List<County> County { get; set; }
     }
 }

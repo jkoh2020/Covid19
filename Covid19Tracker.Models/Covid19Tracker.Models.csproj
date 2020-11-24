@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountyEdit.cs" />
     <Compile Include="GetCounties.cs" />
     <Compile Include="GetCountiesData.cs" />
     <Compile Include="GetStates.cs" />

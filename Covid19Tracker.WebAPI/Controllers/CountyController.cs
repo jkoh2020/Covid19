@@ -37,7 +37,7 @@ namespace Covid19Tracker.WebAPI.Controllers
 
        
 
-        // Read
+        // Read - get all counties
 
         [HttpGet]
         public async Task<IHttpActionResult> GetAllCounty()
@@ -48,34 +48,45 @@ namespace Covid19Tracker.WebAPI.Controllers
 
         }
 
-        // Update
+        // Update - additional method
 
-        [HttpPut]
-        public async Task<IHttpActionResult> UpdateCounty([FromUri] int id, [FromBody] County model)
+        //[HttpPut]
+        //public async Task<IHttpActionResult> UpdateCounty([FromUri] int id, [FromBody] County model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState); // 400
+        //    }
+
+        //    County county = await _context.Counties.FindAsync(id);
+        //    if (county == null)
+        //    {
+        //        return NotFound(); // 404
+        //    }
+
+        //    county.CountyName = model.CountyName;
+        //    county.Population = model.Population;
+
+        //    if (await _context.SaveChangesAsync() == 1) // Save changes
+        //    {
+        //        return Ok();
+        //    }
+
+        //    return InternalServerError(); // 500
+        //}
+
+
+        // Update
+        public IHttpActionResult Put(CountyEdit edit)
         {
             if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState); // 400
-            }
+                return BadRequest(ModelState);
 
-            County county = await _context.Counties.FindAsync(id);
-            if (county == null)
-            {
-                return NotFound(); // 404
-            }
-
-            county.CountyName = model.CountyName;
-            county.Population = model.Population;
-
-            if (await _context.SaveChangesAsync() == 1) // Save changes
-            {
-                return Ok();
-            }
-
-            return InternalServerError(); // 500
+            var service = CreateService();
+            if (!service.UpdateCounty(edit))
+                return InternalServerError();
+            return Ok();
         }
-
-
 
 
         // Delete
@@ -99,6 +110,8 @@ namespace Covid19Tracker.WebAPI.Controllers
 
             return InternalServerError(); // 500
         }
+
+        // Read county by id
 
         [HttpGet]
         public async Task<IHttpActionResult> GetCountyById(int id)

@@ -13,7 +13,7 @@ namespace Covid19Tracker.Models
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         public string CountyName { get; set; }
         public int Population { get; set; }
-        public int RecordId { get; set; }
+        
 
     }
 }
