@@ -15,8 +15,11 @@ namespace Covid19Tracker.Models
         public int CountyId { get; set; }
         public Guid UserId { get; set; }
         public string CountyName { get; set; }
-        public int Population { get; set; }
+        public int Population { get; set; }                       
         public virtual List<CountyData> CountyData { get; set; }
+        public int? TotalTests { get; set; }
+        public int? TotalConfirmedCases { get; set; }
+        public int? TotalDeaths { get; set; }
 
 
 

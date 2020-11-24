@@ -24,7 +24,7 @@ namespace Covid19Tracker.WebAPI.Controllers
             return stateService;
         }
 
-        // Post
+        // Post state
         public IHttpActionResult Create(PostState post)
         {
             if (!ModelState.IsValid)
@@ -44,6 +44,70 @@ namespace Covid19Tracker.WebAPI.Controllers
 
             return Ok(posts);
 
+        }
+
+        //Update 
+
+       [HttpPut]
+        public async Task<IHttpActionResult> UpdateCounty([FromUri] int id, [FromBody] State model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState); // 400
+            }
+
+            State state = await _context.States.FindAsync(id);
+            if (state == null)
+            {
+                return NotFound(); // 404
+            }
+
+            state.StateName = model.StateName;
+            state.Population = model.Population;
+
+            if (await _context.SaveChangesAsync() == 1) // Save changes
+            {
+                return Ok();
+            }
+
+            return InternalServerError(); // 500
+        }
+
+        // Delete 
+
+        [HttpDelete]
+
+        public async Task<IHttpActionResult> DeleteState(int id)
+        {
+            State state = await _context.States.FindAsync(id);
+            if (state == null)
+            {
+                return NotFound(); // 404
+            }
+
+            _context.States.Remove(state);
+
+            if (await _context.SaveChangesAsync() == 1)
+            {
+                return Ok();
+            }
+
+            return InternalServerError(); // 500
+        }
+
+        // Read county by id
+
+        [HttpGet]
+        public async Task<IHttpActionResult> GetStateById(int id)
+        {
+            State state = await _context.States.FindAsync(id);
+
+            if (state != null)
+            {
+                return Ok(state); // Status code http: 200
+            }
+
+            return NotFound(); // 404
         }
     }
 }

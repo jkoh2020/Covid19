@@ -40,42 +40,21 @@ namespace Covid19Tracker.WebAPI.Controllers
         // Read - get all counties
 
         [HttpGet]
-        public async Task<IHttpActionResult> GetAllCounty()
-        {
-            List<County> posts = await _context.Counties.ToListAsync();
-           
-            return Ok(posts);
-
-        }
-
-        // Update - additional method
-
-        //[HttpPut]
-        //public async Task<IHttpActionResult> UpdateCounty([FromUri] int id, [FromBody] County model)
+        //public async Task<IHttpActionResult> GetAllCounty()
         //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState); // 400
-        //    }
+        //    List<County> posts = await _context.Counties.ToListAsync();
+           
+        //    return Ok(posts);
 
-        //    County county = await _context.Counties.FindAsync(id);
-        //    if (county == null)
-        //    {
-        //        return NotFound(); // 404
-        //    }
-
-        //    county.CountyName = model.CountyName;
-        //    county.Population = model.Population;
-
-        //    if (await _context.SaveChangesAsync() == 1) // Save changes
-        //    {
-        //        return Ok();
-        //    }
-
-        //    return InternalServerError(); // 500
         //}
 
-
+        public IHttpActionResult GetAllCounty()
+        {
+            CountyService countyService = CreateService();
+            var county = countyService.GetCounty();
+            return Ok(county);
+        }
+       
         // Update
         public IHttpActionResult Put(CountyEdit edit)
         {

@@ -46,14 +46,17 @@ namespace Covid19Tracker.Services
                 var query =
                     ctx
                         .Counties
-                        .Where(e => e.UserId == _userId)
+                       // .Where(e => e.UserId == _userId)
                         .Select(e => new GetCounties
                         {
+                            // CountyData = e.CountyData.Select(x => new GetCountiesData { DataId = x.DataId, UserId = x.UserId, Date = x.Date, CountyId = x.CountyId, TodayTests = x.TodayTests, TodayConfirmedCases = x. TodayConfirmedCases, TodayDeaths = x.TodayDeaths}).ToList(),
                             CountyData = e.CountyData,
                             CountyId = e.CountyId,
                             CountyName = e.CountyName,
-                            Population = e.Population
-                           
+                            Population = e.Population,
+                            TotalTests = e.CountyData.Sum(x => x.TodayTests),
+                            TotalConfirmedCases = e.CountyData.Sum(x => x.TodayConfirmedCases),
+                            TotalDeaths = e.CountyData.Sum(x => x.TodayDeaths)
                             
                         });
                 return query.ToArray();

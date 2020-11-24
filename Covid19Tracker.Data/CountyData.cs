@@ -19,7 +19,7 @@ namespace Covid19Tracker.Data
         public int TodayDeaths { get; set; }
         public int CountyId { get; set; }
         public Guid UserId { get; set; }
-        public int TotalTests { get; set; }
+        
        // public virtual List<County> County { get; set; }
         
         

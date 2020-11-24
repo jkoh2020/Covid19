@@ -58,6 +58,7 @@
     <Compile Include="GetCounties.cs" />
     <Compile Include="GetCountiesData.cs" />
     <Compile Include="GetStates.cs" />
+    <Compile Include="GetStatesData.cs" />
     <Compile Include="PostCounty.cs" />
     <Compile Include="PostCountyData.cs" />
     <Compile Include="PostState.cs" />
