@@ -41,3 +41,10 @@ C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Mig
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.nothing.resources
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.newdatabase.resources
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.jason2.resources
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.jason21.resources
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.jason3.resources
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.datalist.resources
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.addnew.resources
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.jason31.resources
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.commentout.resources
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.calc.resources

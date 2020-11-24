@@ -28,15 +28,15 @@ namespace Covid19Tracker.WebAPI.Controllers
         public IHttpActionResult CreateData(PostCountyData post)
         {
             if (!ModelState.IsValid)
-                return BadRequest(ModelState); // 400
-
+               return BadRequest(ModelState); // 400
+            
             var service = CreateService();
-
             if (!service.CreatePostData(post))
             
-                return InternalServerError();
-                      
-            return Ok(); // 
+               return InternalServerError();
+
+            return Ok(); 
+           
         }
            
         

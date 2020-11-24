@@ -49,13 +49,32 @@ namespace Covid19Tracker.Services
                         .Where(e => e.UserId == _userId)
                         .Select(e => new GetCounties
                         {
+                            CountyData = e.CountyData,
                             CountyId = e.CountyId,
                             CountyName = e.CountyName,
-                            Population = e.Population,
-                            CountyData = e.CountyData
+                            Population = e.Population
+                           
                             
                         });
                 return query.ToArray();
+            }
+        }
+
+        // Update county
+        public bool UpdateCounty(CountyEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Counties
+                        .Single(e => e.CountyId == model.CountyId && e.UserId == _userId);
+
+                entity.CountyName = model.CountyName;
+                entity.Population = model.Population;
+
+                return ctx.SaveChanges() == 1;
+
             }
         }
 

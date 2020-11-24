@@ -56,8 +56,11 @@ namespace Covid19Tracker.Services
                             TodayTests = e.TodayTests,
                             TodayConfirmedCases = e.TodayConfirmedCases,
                             TodayDeaths = e.TodayDeaths
-                           
+                          
+                            
+
                         });
+                        
                 return query.ToArray();
             }
         }
