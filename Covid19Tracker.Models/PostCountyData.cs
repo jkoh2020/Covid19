@@ -21,10 +21,10 @@ namespace Covid19Tracker.Models
         [Required]
         public int TodayDeaths { get; set; }
         public int CountyId { get; set; }
-        public int TotalTests { get; set; }
-        public int TotalConfirmedCases { get; set; }
-        public int TotalDeaths { get; set; }
 
-        
+        //public int TotalTests { get; set; }
+        //public int TotalConfirmedCases { get; set; }
+        //public int TotalDeaths { get; set; }
+
     }
 }
