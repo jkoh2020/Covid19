@@ -39,43 +39,23 @@ namespace Covid19Tracker.WebAPI.Controllers
 
         // Read - get all counties
 
-        [HttpGet]
-        public async Task<IHttpActionResult> GetAllCounty()
-        {
-            List<County> posts = await _context.Counties.ToListAsync();
-           
-            return Ok(posts);
-
-        }
-
-        // Update - additional method
-
-        //[HttpPut]
-        //public async Task<IHttpActionResult> UpdateCounty([FromUri] int id, [FromBody] County model)
+        //[HttpGet]
+        //public async Task<IHttpActionResult> GetAllCounty()
         //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState); // 400
-        //    }
+        //    List<County> posts = await _context.Counties.ToListAsync();
+           
+        //    return Ok(posts);
 
-        //    County county = await _context.Counties.FindAsync(id);
-        //    if (county == null)
-        //    {
-        //        return NotFound(); // 404
-        //    }
-
-        //    county.CountyName = model.CountyName;
-        //    county.Population = model.Population;
-
-        //    if (await _context.SaveChangesAsync() == 1) // Save changes
-        //    {
-        //        return Ok();
-        //    }
-
-        //    return InternalServerError(); // 500
         //}
 
-
+        // Get all counties
+        public IHttpActionResult GetAllCounty()
+        {
+            CountyService countyService = CreateService();
+            var county = countyService.GetCounty();
+            return Ok(county);
+        }
+       
         // Update
         public IHttpActionResult Put(CountyEdit edit)
         {
@@ -111,19 +91,26 @@ namespace Covid19Tracker.WebAPI.Controllers
             return InternalServerError(); // 500
         }
 
-        // Read county by id
+        // Get county by id
 
-        [HttpGet]
-        public async Task<IHttpActionResult> GetCountyById(int id)
+        //[HttpGet]
+        //public async Task<IHttpActionResult> GetCountyById(int id)
+        //{
+        //    County county = await _context.Counties.FindAsync(id);
+
+        //    if (county != null)
+        //    {
+        //        return Ok(county); // Status code http: 200
+        //    }
+
+        //    return NotFound(); // 404
+        //}
+
+        public IHttpActionResult Get(int id)
         {
-            County county = await _context.Counties.FindAsync(id);
-
-            if (county != null)
-            {
-                return Ok(county); // Status code http: 200
-            }
-
-            return NotFound(); // 404
+            CountyService countyService = CreateService();
+            var county = countyService.GetCountyById(id);
+            return Ok(county);
         }
 
     }

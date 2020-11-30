@@ -13,17 +13,13 @@ namespace Covid19Tracker.Data
         
         [Key]
         public int DataId { get; set; }
-        public DateTime Date {get;set;}
+        public int CountyId { get; set; }
+        public string CountyName { get; set; }
         public int TodayTests{get;set;}
         public int TodayConfirmedCases { get; set; }
         public int TodayDeaths { get; set; }
-        public int CountyId { get; set; }
         public Guid UserId { get; set; }
-        public int TotalTests { get; set; }
-       // public virtual List<County> County { get; set; }
-        
-        
-        //[ForeignKey(nameof(CountyId))]
-        //public virtual County County { get; set; }
+        public DateTimeOffset CreatedDate { get; set; }
+
     }
 }

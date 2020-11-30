@@ -13,5 +13,8 @@ namespace Covid19Tracker.Models
         [MinLength(2, ErrorMessage = "Please enter at lease 2 characters.")]
         public string StateName { get; set; }
         public int Population { get; set; }
+
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedDate { get; set; }
     }
 }

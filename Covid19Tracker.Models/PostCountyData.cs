@@ -11,9 +11,7 @@ namespace Covid19Tracker.Models
     {
         [Key]
         public int Id { get; set; }
-
-        [Required]
-        public DateTime Date { get; set; }
+                      
         [Required]
         public int TodayTests { get; set; }
         [Required]
@@ -21,10 +19,11 @@ namespace Covid19Tracker.Models
         [Required]
         public int TodayDeaths { get; set; }
         public int CountyId { get; set; }
-        public int TotalTests { get; set; }
-        public int TotalConfirmedCases { get; set; }
-        public int TotalDeaths { get; set; }
+        public string CountyName { get; set; }
 
-        
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedDate { get; set; }
+
+
     }
 }

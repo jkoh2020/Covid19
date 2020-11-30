@@ -25,6 +25,7 @@ namespace Covid19Tracker.Services
                 UserId = _userId,
                 StateName = model.StateName,
                 Population = model.Population,
+                CreatedDate = DateTimeOffset.Now
 
             };
 
@@ -44,17 +45,67 @@ namespace Covid19Tracker.Services
                 var query =
                     ctx
                         .States
-                        .Where(e => e.UserId == _userId)
+                        //.Where(e => e.UserId == _userId)
                         .Select(e => new GetStates
                         {
-                            
                             StateId = e.StateId,
                             StateName = e.StateName,
-                            Population = e.Population
-
-
+                            Population = e.Population,
+                            TotalTests = e.StateData.Sum(x => x.TodayTests),
+                            TotalConfirmedCases = e.StateData.Sum(x => x.TodayConfirmedCases),
+                            TotalDeaths = e.StateData.Sum(x => x.TodayDeaths),
+                           
                         });
                 return query.ToArray();
+            }
+        }
+
+        // Get state by id
+
+        public GetStates GetStateById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .States
+                        .Single(e => e.StateId == id && e.UserId == _userId);
+                return
+                    new GetStates
+                    {
+
+                        StateId = entity.StateId,
+                        StateName = entity.StateName,
+                        Population = entity.Population,
+                        TotalTests = entity.StateData.Sum(x => x.TodayTests),
+                        TotalConfirmedCases = entity.StateData.Sum(x => x.TodayConfirmedCases),
+                        TotalDeaths = entity.StateData.Sum(x => x.TodayDeaths),
+                        
+                    };
+                
+            }
+        }
+
+       
+       
+        // Update state
+
+        public bool UpdateState(StateEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .States
+                        .Single(e => e.StateId == model.StateId && e.UserId == _userId);
+
+               // entity.StateName = model.StateName;
+                entity.Population = model.Population;
+                entity.ModifiedDate = DateTimeOffset.Now;
+                
+
+                return ctx.SaveChanges() == 1;
+
             }
         }
 

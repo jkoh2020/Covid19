@@ -58,11 +58,13 @@
     <Compile Include="GetCounties.cs" />
     <Compile Include="GetCountiesData.cs" />
     <Compile Include="GetStates.cs" />
+    <Compile Include="GetStatesData.cs" />
     <Compile Include="PostCounty.cs" />
     <Compile Include="PostCountyData.cs" />
     <Compile Include="PostState.cs" />
     <Compile Include="PostStateData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateEdit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -38,33 +38,48 @@ namespace Covid19Tracker.WebAPI.Controllers
             return Ok(); 
            
         }
-           
-        
+
+
         // Get All
-        [HttpGet]
-        public async Task<IHttpActionResult> GetAllCountyData()
+        //[HttpGet]
+        //public async Task<IHttpActionResult> GetAllCountyData()
+        //{
+
+        //    List<CountyData> post = await _context.CountiesData.ToListAsync();
+        //    return Ok(post);
+
+        //}
+
+        public IHttpActionResult GetAllCountyData()
         {
-
-            List<CountyData> post = await _context.CountiesData.ToListAsync();
-            return Ok(post);
-
+            CountyDataService countyDataService = CreateService();
+            var county = countyDataService.GetCountyData();
+            return Ok(county);
         }
 
-        
-        // Get by id
 
-        [HttpGet]
+        // Get county data by id
 
-        public async Task<IHttpActionResult> GetById(int id)
+        //[HttpGet]
+
+        //public async Task<IHttpActionResult> GetById(int id)
+        //{
+        //    CountyData data = await _context.CountiesData.FindAsync(id);
+
+        //    if (data != null)
+        //    {
+        //        return Ok(data); // Status code http: 200
+        //    }
+
+        //    return NotFound(); // 404
+        //}
+
+        // Get conty data by id
+        public IHttpActionResult Get(int id)
         {
-            CountyData data = await _context.CountiesData.FindAsync(id);
-
-            if (data != null)
-            {
-                return Ok(data); // Status code http: 200
-            }
-
-            return NotFound(); // 404
+           CountyDataService countyDataService = CreateService();
+            var countyData = countyDataService.GetCountyDataById(id);
+            return Ok(countyData);
         }
 
     }
