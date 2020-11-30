@@ -18,8 +18,9 @@ namespace Covid19Tracker.Models
         public int TodayConfirmedCases { get; set; }
         [Required]
         public int TodayDeaths { get; set; }
-        public int TotalTests { get; set; }
-        public int TotalConfirmedCases { get; set; }
-        public int TotalDeaths { get; set; }
+        //      [Required]
+        //public int TotalTests { get; set; }
+        //public int TotalConfirmedCases { get; set; }
+        //public int TotalDeaths { get; set; }
     }
 }

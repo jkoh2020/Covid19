@@ -17,7 +17,7 @@ namespace Covid19Tracker.Services
             _userId = userId;
         }
 
-        // Posing county data
+        // Posting county data
 
         public bool CreatePostData(PostCountyData model)
         {
@@ -29,7 +29,7 @@ namespace Covid19Tracker.Services
                 TodayConfirmedCases = model.TodayConfirmedCases,
                 TodayDeaths = model.TodayDeaths,
                 CountyId = model.CountyId,
-                TotalTests = model.TotalTests
+                //TotalTests = model.TotalTests
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -44,6 +44,13 @@ namespace Covid19Tracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
+                int totalDeaths = 0;
+
+				foreach (var dailyDeaths in ctx.CountiesData)
+				{
+                    totalDeaths = totalDeaths + dailyDeaths.TodayDeaths;
+                }
+
                 var query =
                     ctx
                         .CountiesData
@@ -56,8 +63,8 @@ namespace Covid19Tracker.Services
                             TodayTests = e.TodayTests,
                             TodayConfirmedCases = e.TodayConfirmedCases,
                             TodayDeaths = e.TodayDeaths
-                          
-                            
+
+
 
                         });
                         

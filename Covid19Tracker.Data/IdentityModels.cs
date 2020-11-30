@@ -50,8 +50,15 @@ namespace Covid19Tracker.WebAPI.Models
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
-        }
 
+                // modelBuilder
+				//.Entity<Worker>()
+				//.Property(e => e.Profit)
+				//.UsePropertyAccessMode(PropertyAccessMode.Property);
+
+		}
+
+       
 
         public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
         {

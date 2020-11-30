@@ -41,20 +41,21 @@ namespace Covid19Tracker.Services
 
         public IEnumerable<GetCounties> GetCounty()
         {
+
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                         .Counties
-                        .Where(e => e.UserId == _userId)
                         .Select(e => new GetCounties
                         {
-                            CountyData = e.CountyData,
+                            CountyData = e.CountyData.Select(X=> new GetCountiesData { DataId = X.DataId, UserId = X.UserId, Date = X.Date, CountyId = X.CountyId, TodayTests = X.TodayTests, TodayConfirmedCases = X.TodayConfirmedCases, TodayDeaths = X.TodayDeaths }).ToList(),
                             CountyId = e.CountyId,
                             CountyName = e.CountyName,
-                            Population = e.Population
-                           
-                            
+                            Population = e.Population,
+                            TotalTests = e.CountyData.Sum(x => x.TodayTests),
+                            TotalConfirmedCases = e.CountyData.Sum(x => x.TodayConfirmedCases),
+                            TotalDeaths = e.CountyData.Sum(x => x.TodayDeaths)
                         });
                 return query.ToArray();
             }

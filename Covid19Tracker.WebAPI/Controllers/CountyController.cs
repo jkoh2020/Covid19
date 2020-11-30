@@ -40,11 +40,13 @@ namespace Covid19Tracker.WebAPI.Controllers
         // Read - get all counties
 
         [HttpGet]
-        public async Task<IHttpActionResult> GetAllCounty()
+        public IHttpActionResult GetAllCounty()
         {
-            List<County> posts = await _context.Counties.ToListAsync();
-           
-            return Ok(posts);
+            //List<County> posts = await _context.Counties.ToListAsync();
+
+            CountyService countyService = CreateService();
+            var county = countyService.GetCounty();
+            return Ok(county);
 
         }
 
