@@ -20,3 +20,7 @@ C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\Covid19Tracker.Data
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\Covid19Tracker.Data.dll.config
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\Covid19Tracker.Models.pdb
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Services\bin\Debug\Covid19Tracker.Models.dll.config
+C:\ElevenFiftyProjects\Covid19-3\Covid19\Covid19Tracker.Services\obj\Debug\Covid19Tracker.Services.csprojAssemblyReference.cache
+C:\ElevenFiftyProjects\Covid19-3\Covid19\Covid19Tracker.Services\obj\Debug\Covid19Tracker.Services.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\Covid19-3\Covid19\Covid19Tracker.Services\obj\Debug\Covid19Tracker.Services.dll
+C:\ElevenFiftyProjects\Covid19-3\Covid19\Covid19Tracker.Services\obj\Debug\Covid19Tracker.Services.pdb

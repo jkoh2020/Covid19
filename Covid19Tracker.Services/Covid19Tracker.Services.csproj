@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="CountyDataService.cs" />
     <Compile Include="CountyService.cs" />
+    <Compile Include="OutsideApiService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StateDataService.cs" />
     <Compile Include="StateService.cs" />

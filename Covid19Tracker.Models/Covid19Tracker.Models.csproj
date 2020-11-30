@@ -59,6 +59,7 @@
     <Compile Include="GetCountiesData.cs" />
     <Compile Include="GetStates.cs" />
     <Compile Include="GetStatesData.cs" />
+    <Compile Include="OutsideApiStateModel.cs" />
     <Compile Include="PostCounty.cs" />
     <Compile Include="PostCountyData.cs" />
     <Compile Include="PostState.cs" />
@@ -71,6 +72,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Covid19ConsoleApp\Covid19ConsoleApp.csproj">
+      <Project>{833d736c-0a5a-40c3-b4f6-f3faa2545423}</Project>
+      <Name>Covid19ConsoleApp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Covid19Tracker.Data\Covid19Tracker.Data.csproj">
       <Project>{562C634E-502B-47BE-B451-6514BACAA2BB}</Project>
       <Name>Covid19Tracker.Data</Name>
