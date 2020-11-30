@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19Tracker.Models", "Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19Tracker.Services", "Covid19Tracker.Services\Covid19Tracker.Services.csproj", "{1C07F684-4373-4DE5-954C-AE5F045F4E88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutsideApi", "OutsideApi\OutsideApi.csproj", "{D8E6F824-78EB-468A-AA04-48429EF7BBC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1C07F684-4373-4DE5-954C-AE5F045F4E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C07F684-4373-4DE5-954C-AE5F045F4E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C07F684-4373-4DE5-954C-AE5F045F4E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8E6F824-78EB-468A-AA04-48429EF7BBC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8E6F824-78EB-468A-AA04-48429EF7BBC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8E6F824-78EB-468A-AA04-48429EF7BBC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8E6F824-78EB-468A-AA04-48429EF7BBC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
