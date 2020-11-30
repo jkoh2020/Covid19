@@ -24,12 +24,13 @@ namespace Covid19Tracker.Services
             var entity = new CountyData()
             {
                 UserId = _userId,
-                Date = model.Date,
                 TodayTests = model.TodayTests,
                 TodayConfirmedCases = model.TodayConfirmedCases,
                 TodayDeaths = model.TodayDeaths,
                 CountyId = model.CountyId,
-                
+                CountyName = model.CountyName,
+                CreatedDate = DateTimeOffset.Now
+
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -44,12 +45,12 @@ namespace Covid19Tracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                int totalDeaths = 0;
+                //int totalDeaths = 0;
 
-                foreach (var dailyDeaths in ctx.CountiesData)
-                {
-                    totalDeaths = totalDeaths + dailyDeaths.TodayDeaths;
-                }
+                //foreach (var dailyDeaths in ctx.CountiesData)
+                //{
+                //    totalDeaths = totalDeaths + dailyDeaths.TodayDeaths;
+                //}
 
                 var query =
                     ctx
@@ -59,12 +60,14 @@ namespace Covid19Tracker.Services
                         {
 
                             DataId = e.DataId,
-                            Date = e.Date,
+                            CountyId = e.CountyId,
+                            CountyName = e.CountyName,
                             TodayTests = e.TodayTests,
                             TodayConfirmedCases = e.TodayConfirmedCases,
-                            TodayDeaths = e.TodayDeaths
-                          
-                            
+                            TodayDeaths = e.TodayDeaths,
+                            CreatedDate = e.CreatedDate
+
+
 
                         });
                         
@@ -72,7 +75,33 @@ namespace Covid19Tracker.Services
             }
         }
 
-        
+        // County data by id
+        public GetCountiesData GetCountyDataById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .CountiesData
+                        .Single(e => e.DataId == id && e.UserId == _userId);
+                return
+                    new GetCountiesData
+                    {
+                        DataId = entity.DataId,
+                        CountyId = entity.CountyId,
+                        CountyName = entity.CountyName,
+                        TodayTests = entity.TodayTests,
+                        TodayConfirmedCases = entity.TodayConfirmedCases,
+                        TodayDeaths = entity.TodayDeaths,
+                        CreatedDate = entity.CreatedDate
+
+
+                    };
+
+            }
+        }
+
+
     }
 }
 

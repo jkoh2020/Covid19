@@ -39,7 +39,7 @@ namespace Covid19Tracker.WebAPI.Controllers
 
         // Read - get all counties
 
-        [HttpGet]
+        //[HttpGet]
         //public async Task<IHttpActionResult> GetAllCounty()
         //{
         //    List<County> posts = await _context.Counties.ToListAsync();
@@ -48,6 +48,7 @@ namespace Covid19Tracker.WebAPI.Controllers
 
         //}
 
+        // Get all counties
         public IHttpActionResult GetAllCounty()
         {
             CountyService countyService = CreateService();
@@ -90,19 +91,26 @@ namespace Covid19Tracker.WebAPI.Controllers
             return InternalServerError(); // 500
         }
 
-        // Read county by id
+        // Get county by id
 
-        [HttpGet]
-        public async Task<IHttpActionResult> GetCountyById(int id)
+        //[HttpGet]
+        //public async Task<IHttpActionResult> GetCountyById(int id)
+        //{
+        //    County county = await _context.Counties.FindAsync(id);
+
+        //    if (county != null)
+        //    {
+        //        return Ok(county); // Status code http: 200
+        //    }
+
+        //    return NotFound(); // 404
+        //}
+
+        public IHttpActionResult Get(int id)
         {
-            County county = await _context.Counties.FindAsync(id);
-
-            if (county != null)
-            {
-                return Ok(county); // Status code http: 200
-            }
-
-            return NotFound(); // 404
+            CountyService countyService = CreateService();
+            var county = countyService.GetCountyById(id);
+            return Ok(county);
         }
 
     }

@@ -9,17 +9,21 @@ namespace Covid19Tracker.Models
 {
    public class PostStateData
     {
+        public int Id { get; set; }
+       
+             
+        [Required]
         public int StateId { get; set; }
-        [Required]
-        public DateTime Today { get; set; }
-        [Required]
+        public string StateName { get; set; }
         public int TodayTests { get; set; }
         [Required]
         public int TodayConfirmedCases { get; set; }
         [Required]
         public int TodayDeaths { get; set; }
-        public int TotalTests { get; set; }
-        public int TotalConfirmedCases { get; set; }
-        public int TotalDeaths { get; set; }
+        
+
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedDate { get; set; }
+       
     }
 }

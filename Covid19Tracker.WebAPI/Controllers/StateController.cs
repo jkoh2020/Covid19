@@ -35,20 +35,30 @@ namespace Covid19Tracker.WebAPI.Controllers
             return Ok(); // 
         }
 
-        // Read - get all state
+        // Read - get all states
 
-        [HttpGet]
-        public async Task<IHttpActionResult> GetAllCounty()
+        //[HttpGet]
+        //public async Task<IHttpActionResult> GetAllState()
+        //{
+        //    List<State> posts = await _context.States.ToListAsync();
+
+        //    return Ok(posts);
+
+        //}
+
+
+        // Get all states
+               
+        public IHttpActionResult GetAllState()
         {
-            List<State> posts = await _context.States.ToListAsync();
-
-            return Ok(posts);
-
+            StateService stateService = CreateService();
+            var state = stateService.GetState();
+            return Ok(state);
         }
 
-        //Update 
+        //Update by uri
 
-       [HttpPut]
+        [HttpPut]
         public async Task<IHttpActionResult> UpdateCounty([FromUri] int id, [FromBody] State model)
         {
             if (!ModelState.IsValid)
@@ -73,6 +83,19 @@ namespace Covid19Tracker.WebAPI.Controllers
             return InternalServerError(); // 500
         }
 
+        // Update by id
+        public IHttpActionResult Put(StateEdit edit)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateService();
+            if (!service.UpdateState(edit))
+                return InternalServerError();
+            return Ok();
+        }
+
+
         // Delete 
 
         [HttpDelete]
@@ -95,19 +118,29 @@ namespace Covid19Tracker.WebAPI.Controllers
             return InternalServerError(); // 500
         }
 
-        // Read county by id
+       // Get state by id
 
-        [HttpGet]
-        public async Task<IHttpActionResult> GetStateById(int id)
+        public IHttpActionResult Get(int id)
         {
-            State state = await _context.States.FindAsync(id);
-
-            if (state != null)
-            {
-                return Ok(state); // Status code http: 200
-            }
-
-            return NotFound(); // 404
+            StateService stateService = CreateService();
+            var state = stateService.GetStateById(id);
+            return Ok(state);
+            
         }
+
+
+        // Get state by id
+        //[HttpGet]
+        //public async Task<IHttpActionResult> GetStateById(int id)
+        //{
+        //    State state = await _context.States.FindAsync(id);
+
+        //    if (state != null)
+        //    {
+        //        return Ok(state); // Status code http: 200
+        //    }
+
+        //    return NotFound(); // 404
+        //}
     }
 }

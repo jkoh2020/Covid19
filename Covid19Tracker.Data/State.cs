@@ -15,6 +15,9 @@ namespace Covid19Tracker.Data
         [Required]
         public string StateName { get; set; }
         public int Population { get; set; }
-
+        public DateTimeOffset CreatedDate { get; set; }
+        public DateTimeOffset? ModifiedDate { get; set; }
+        public virtual List<StateData> StateData { get; set; }
+       
     }
 }

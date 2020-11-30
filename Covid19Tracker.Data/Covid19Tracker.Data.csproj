@@ -88,67 +88,6 @@
     <Compile Include="County.cs" />
     <Compile Include="CountyData.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202011200427121_InitialCreate.cs" />
-    <Compile Include="Migrations\202011200427121_InitialCreate.Designer.cs">
-      <DependentUpon>202011200427121_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011200610126_additional.cs" />
-    <Compile Include="Migrations\202011200610126_additional.Designer.cs">
-      <DependentUpon>202011200610126_additional.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011200624275_changedata.cs" />
-    <Compile Include="Migrations\202011200624275_changedata.Designer.cs">
-      <DependentUpon>202011200624275_changedata.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011201946360_additonaldata.cs" />
-    <Compile Include="Migrations\202011201946360_additonaldata.Designer.cs">
-      <DependentUpon>202011201946360_additonaldata.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011210729327_nothing.cs" />
-    <Compile Include="Migrations\202011210729327_nothing.Designer.cs">
-      <DependentUpon>202011210729327_nothing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011231522173_newdatabase.cs" />
-    <Compile Include="Migrations\202011231522173_newdatabase.Designer.cs">
-      <DependentUpon>202011231522173_newdatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011232051532_jason2.cs" />
-    <Compile Include="Migrations\202011232051532_jason2.Designer.cs">
-      <DependentUpon>202011232051532_jason2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011232250264_jason21.cs" />
-    <Compile Include="Migrations\202011232250264_jason21.Designer.cs">
-      <DependentUpon>202011232250264_jason21.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011232318487_jason3.cs" />
-    <Compile Include="Migrations\202011232318487_jason3.Designer.cs">
-      <DependentUpon>202011232318487_jason3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011232324506_datalist.cs" />
-    <Compile Include="Migrations\202011232324506_datalist.Designer.cs">
-      <DependentUpon>202011232324506_datalist.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011240010481_addnew.cs" />
-    <Compile Include="Migrations\202011240010481_addnew.Designer.cs">
-      <DependentUpon>202011240010481_addnew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011240327064_jason31.cs" />
-    <Compile Include="Migrations\202011240327064_jason31.Designer.cs">
-      <DependentUpon>202011240327064_jason31.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011240331027_commentout.cs" />
-    <Compile Include="Migrations\202011240331027_commentout.Designer.cs">
-      <DependentUpon>202011240331027_commentout.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011240447358_calc.cs" />
-    <Compile Include="Migrations\202011240447358_calc.Designer.cs">
-      <DependentUpon>202011240447358_calc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011241634158_newadditionaldata.cs" />
-    <Compile Include="Migrations\202011241634158_newadditionaldata.Designer.cs">
-      <DependentUpon>202011241634158_newadditionaldata.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="State.cs" />
     <Compile Include="StateData.cs" />
@@ -156,53 +95,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011200427121_InitialCreate.resx">
-      <DependentUpon>202011200427121_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011200610126_additional.resx">
-      <DependentUpon>202011200610126_additional.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011200624275_changedata.resx">
-      <DependentUpon>202011200624275_changedata.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011201946360_additonaldata.resx">
-      <DependentUpon>202011201946360_additonaldata.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011210729327_nothing.resx">
-      <DependentUpon>202011210729327_nothing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011231522173_newdatabase.resx">
-      <DependentUpon>202011231522173_newdatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011232051532_jason2.resx">
-      <DependentUpon>202011232051532_jason2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011232250264_jason21.resx">
-      <DependentUpon>202011232250264_jason21.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011232318487_jason3.resx">
-      <DependentUpon>202011232318487_jason3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011232324506_datalist.resx">
-      <DependentUpon>202011232324506_datalist.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011240010481_addnew.resx">
-      <DependentUpon>202011240010481_addnew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011240327064_jason31.resx">
-      <DependentUpon>202011240327064_jason31.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011240331027_commentout.resx">
-      <DependentUpon>202011240331027_commentout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011240447358_calc.resx">
-      <DependentUpon>202011240447358_calc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011241634158_newadditionaldata.resx">
-      <DependentUpon>202011241634158_newadditionaldata.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
