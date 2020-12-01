@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Covid19Tracker.Services
 {
-   public class CountyService
+    public class CountyService
     {
         private readonly Guid _userId;
         public CountyService(Guid userId)
@@ -17,7 +17,7 @@ namespace Covid19Tracker.Services
             _userId = userId;
         }
 
-        // Posting county
+        // Post county
         public bool CreatePost(PostCounty model)
         {
             var entity = new County()
@@ -36,8 +36,6 @@ namespace Covid19Tracker.Services
             }
         }
 
-        
-
         // Get County
 
         public IEnumerable<GetCounties> GetCounty()
@@ -50,14 +48,14 @@ namespace Covid19Tracker.Services
                         //.Where(e => e.UserId == _userId)
                         .Select(e => new GetCounties
                         {
-                            CountyData = e.CountyData.Select(x => new GetCountiesData { DataId = x.DataId, /*UserId = x.UserId,*/ CountyId = x.CountyId, CountyName = x.CountyName, TodayTests = x.TodayTests, TodayConfirmedCases = x. TodayConfirmedCases, TodayDeaths = x.TodayDeaths, CreatedDate = x.CreatedDate}).ToList(),
+                            CountyData = e.CountyData.Select(x => new GetCountiesData { DataId = x.DataId, /*UserId = x.UserId,*/ Date = x.Date, CountyId = x.CountyId, CountyName = x.CountyName, TodayTests = x.TodayTests, TodayConfirmedCases = x.TodayConfirmedCases, TodayDeaths = x.TodayDeaths, CreatedDate = x.CreatedDate }).ToList(),
                             CountyId = e.CountyId,
                             CountyName = e.CountyName,
                             Population = e.Population,
                             TotalTests = e.CountyData.Sum(x => x.TodayTests),
                             TotalConfirmedCases = e.CountyData.Sum(x => x.TodayConfirmedCases),
                             TotalDeaths = e.CountyData.Sum(x => x.TodayDeaths),
-                           
+
                         });
                 return query.ToArray();
             }
@@ -73,7 +71,6 @@ namespace Covid19Tracker.Services
                         .Counties
                         .Single(e => e.CountyId == model.CountyId && e.UserId == _userId);
 
-               //entity.CountyName = model.CountyName;
                 entity.Population = model.Population;
                 entity.ModifiedDate = DateTimeOffset.Now;
                 return ctx.SaveChanges() == 1;
@@ -81,6 +78,7 @@ namespace Covid19Tracker.Services
             }
         }
 
+        // Get county by id
         public GetCounties GetCountyById(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -88,20 +86,25 @@ namespace Covid19Tracker.Services
                 var entity =
                     ctx
                         .Counties
-                        .Single(e => e.CountyId == id && e.UserId == _userId);
-                return
-                    new GetCounties
-                    {
-                        CountyData = entity.CountyData.Select(x => new GetCountiesData { DataId = x.DataId, /*UserId = x.UserId,*/ CountyId = x.CountyId, CountyName = x.CountyName, TodayTests = x.TodayTests, TodayConfirmedCases = x.TodayConfirmedCases, TodayDeaths = x.TodayDeaths, CreatedDate = x.CreatedDate }).ToList(),
-                        CountyId = entity.CountyId,
-                        CountyName = entity.CountyName,
-                        Population = entity.Population,
-                        TotalTests = entity.CountyData.Sum(x => x.TodayTests),
-                        TotalConfirmedCases = entity.CountyData.Sum(x => x.TodayConfirmedCases),
-                        TotalDeaths = entity.CountyData.Sum(x => x.TodayDeaths),
+                        .SingleOrDefault(e => e.CountyId == id && e.UserId == _userId);
+
+                if (entity != null)
+                {
+                    return
+                        new GetCounties
+                        {
+                            CountyData = entity.CountyData.Select(x => new GetCountiesData { DataId = x.DataId, /*UserId = x.UserId,*/ Date = x.Date, CountyId = x.CountyId, CountyName = x.CountyName, TodayTests = x.TodayTests, TodayConfirmedCases = x.TodayConfirmedCases, TodayDeaths = x.TodayDeaths, CreatedDate = x.CreatedDate }).ToList(),
+                            CountyId = entity.CountyId,
+                            CountyName = entity.CountyName,
+                            Population = entity.Population,
+                            TotalTests = entity.CountyData.Sum(x => x.TodayTests),
+                            TotalConfirmedCases = entity.CountyData.Sum(x => x.TodayConfirmedCases),
+                            TotalDeaths = entity.CountyData.Sum(x => x.TodayDeaths),
 
 
-                    };
+                        };
+                }
+                else { return null; }
 
             }
         }

@@ -83,7 +83,7 @@ namespace Covid19Tracker.WebAPI.Controllers
             return InternalServerError(); // 500
         }
 
-        // Update by id
+        // Update by id(body)
         public IHttpActionResult Put(StateEdit edit)
         {
             if (!ModelState.IsValid)
@@ -124,7 +124,13 @@ namespace Covid19Tracker.WebAPI.Controllers
         {
             StateService stateService = CreateService();
             var state = stateService.GetStateById(id);
-            return Ok(state);
+            if (state != null)
+            {
+                return Ok(state);
+            }
+
+            return NotFound();
+           
             
         }
 

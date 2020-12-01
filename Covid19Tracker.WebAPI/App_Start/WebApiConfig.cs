@@ -26,6 +26,13 @@ namespace Covid19Tracker.WebAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // create to use two different id in one controller. This is very important and useful.
+            config.Routes.MapHttpRoute(
+                name: "ControllerAndAction",
+                routeTemplate: "api/{controller}/{countyId}/{stateId}"
+                );
+                
         }
     }
 }

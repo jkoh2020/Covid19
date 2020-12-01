@@ -11,6 +11,7 @@ namespace Covid19Tracker.Models
     {
         [Key]
         public int Id { get; set; }
+        public DateTime Date { get; set; }
                       
         [Required]
         public int TodayTests { get; set; }
@@ -23,7 +24,5 @@ namespace Covid19Tracker.Models
 
         [Display(Name = "Created")]
         public DateTimeOffset CreatedDate { get; set; }
-
-
     }
 }

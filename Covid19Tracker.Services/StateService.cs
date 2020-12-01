@@ -17,7 +17,7 @@ namespace Covid19Tracker.Services
             _userId = userId;
         }
 
-        // Posting state
+        // Post state
         public bool CreatePost(PostState model)
         {
             var entity = new State()
@@ -69,8 +69,10 @@ namespace Covid19Tracker.Services
                 var entity =
                     ctx
                         .States
-                        .Single(e => e.StateId == id && e.UserId == _userId);
-                return
+                        .SingleOrDefault(e => e.StateId == id && e.UserId == _userId);
+                if (entity != null)
+                {
+                    return
                     new GetStates
                     {
 
@@ -80,9 +82,11 @@ namespace Covid19Tracker.Services
                         TotalTests = entity.StateData.Sum(x => x.TodayTests),
                         TotalConfirmedCases = entity.StateData.Sum(x => x.TodayConfirmedCases),
                         TotalDeaths = entity.StateData.Sum(x => x.TodayDeaths),
-                        
+
                     };
-                
+                }
+
+                return null;         
             }
         }
 
@@ -99,11 +103,9 @@ namespace Covid19Tracker.Services
                         .States
                         .Single(e => e.StateId == model.StateId && e.UserId == _userId);
 
-               // entity.StateName = model.StateName;
                 entity.Population = model.Population;
                 entity.ModifiedDate = DateTimeOffset.Now;
                 
-
                 return ctx.SaveChanges() == 1;
 
             }

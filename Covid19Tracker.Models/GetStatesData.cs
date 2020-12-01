@@ -10,6 +10,7 @@ namespace Covid19Tracker.Models
     public class GetStatesData
     {
         public int DataId { get; set; }
+        public DateTime Date { get; set; }
         public int StateId { get; set; }
         public string StateName { get; set; }
         public int TodayTests { get; set; }

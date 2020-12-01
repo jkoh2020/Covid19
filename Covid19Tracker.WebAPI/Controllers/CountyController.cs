@@ -105,12 +105,19 @@ namespace Covid19Tracker.WebAPI.Controllers
 
         //    return NotFound(); // 404
         //}
-
+       
+        // Get county by id
         public IHttpActionResult Get(int id)
         {
             CountyService countyService = CreateService();
             var county = countyService.GetCountyById(id);
-            return Ok(county);
+
+            if (county != null)
+            {
+                return Ok(county); // 200
+            }
+
+            return NotFound(); // 404
         }
 
     }

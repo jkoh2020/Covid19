@@ -17,13 +17,14 @@ namespace Covid19Tracker.Services
             _userId = userId;
         }
 
-        // Posing county data
+        // Post county data
 
         public bool CreatePostData(PostCountyData model)
         {
             var entity = new CountyData()
             {
                 UserId = _userId,
+                Date = model.Date,
                 TodayTests = model.TodayTests,
                 TodayConfirmedCases = model.TodayConfirmedCases,
                 TodayDeaths = model.TodayDeaths,
@@ -41,6 +42,7 @@ namespace Covid19Tracker.Services
             }
         }
 
+        // Get county data
         public IEnumerable<GetCountiesData> GetCountyData()
         {
             using (var ctx = new ApplicationDbContext())
@@ -60,15 +62,13 @@ namespace Covid19Tracker.Services
                         {
 
                             DataId = e.DataId,
+                            Date = e.Date,
                             CountyId = e.CountyId,
                             CountyName = e.CountyName,
                             TodayTests = e.TodayTests,
                             TodayConfirmedCases = e.TodayConfirmedCases,
                             TodayDeaths = e.TodayDeaths,
                             CreatedDate = e.CreatedDate
-
-
-
                         });
                         
                 return query.ToArray();
@@ -83,20 +83,24 @@ namespace Covid19Tracker.Services
                 var entity =
                     ctx
                         .CountiesData
-                        .Single(e => e.DataId == id && e.UserId == _userId);
+                        .SingleOrDefault(e => e.DataId == id && e.UserId == _userId);
+                if(entity != null)
+                { 
                 return
                     new GetCountiesData
                     {
                         DataId = entity.DataId,
+                        Date = entity.Date,
                         CountyId = entity.CountyId,
                         CountyName = entity.CountyName,
                         TodayTests = entity.TodayTests,
                         TodayConfirmedCases = entity.TodayConfirmedCases,
                         TodayDeaths = entity.TodayDeaths,
                         CreatedDate = entity.CreatedDate
-
-
                     };
+                }
+
+                return null;
 
             }
         }

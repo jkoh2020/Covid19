@@ -11,7 +11,6 @@ namespace Covid19Tracker.Data
     public class County
     {
         
-
         [Key]
         public int CountyId {get;set;}
         [Required]
@@ -22,9 +21,5 @@ namespace Covid19Tracker.Data
         public DateTimeOffset? ModifiedDate { get; set; }
         public virtual List<CountyData> CountyData { get; set; }
         
-
-
-
-
     }
 }
