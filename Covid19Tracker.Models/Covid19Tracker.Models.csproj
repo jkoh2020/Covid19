@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CountyEdit.cs" />
+    <Compile Include="CountyState.cs" />
     <Compile Include="GetCounties.cs" />
     <Compile Include="GetCountiesData.cs" />
     <Compile Include="GetStates.cs" />

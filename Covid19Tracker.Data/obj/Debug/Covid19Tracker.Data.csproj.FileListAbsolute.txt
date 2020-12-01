@@ -33,3 +33,6 @@ C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\bin\Debug\System.Web.Http.Owin.xm
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.csproj.CopyComplete
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.dll
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.pdb
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.InitialCreate.resources
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.csproj.GenerateResource.cache
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Data\obj\Debug\Covid19Tracker.Data.Migrations.test2.resources

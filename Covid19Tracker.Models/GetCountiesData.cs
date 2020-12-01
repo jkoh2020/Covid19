@@ -10,8 +10,9 @@ namespace Covid19Tracker.Models
 {
     public class GetCountiesData
     {
-       
+
         public int DataId { get; set; }
+        public DateTime Date {get;set;}
         public int CountyId { get; set; }
         public string CountyName { get; set; }
         public int TodayTests { get; set; }

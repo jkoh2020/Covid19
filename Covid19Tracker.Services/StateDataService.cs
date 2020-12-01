@@ -23,14 +23,13 @@ namespace Covid19Tracker.Services
             var entity = new StateData()
             {
                 UserId = _userId,
+                Date = model.Date,
                 StateName = model.StateName,
                 TodayTests = model.TodayTests,
                 TodayConfirmedCases = model.TodayConfirmedCases,
                 TodayDeaths = model.TodayDeaths,
                 StateId = model.StateId,
                 CreatedDate = DateTimeOffset.Now
-
-
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -46,23 +45,20 @@ namespace Covid19Tracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                
-
                 var query =
                     ctx
                         .StatesData
                         .Where(e => e.UserId == _userId)
                         .Select(e => new GetStatesData
                         {
-
                             DataId = e.DataId,
+                            Date = e.Date,
                             StateId = e.StateId,
                             StateName = e.StateName,
                             TodayTests = e.TodayTests,
                             TodayConfirmedCases = e.TodayConfirmedCases,
                             TodayDeaths = e.TodayDeaths,
                             CreatedDate = e.CreatedDate 
-
                         });
 
                 return query.ToArray();

@@ -12,7 +12,11 @@ namespace Covid19Tracker.Data
     {
         [Key]
         public int DataId { get; set; }
+        
+        public DateTime Date { get; set; }
+       
         public int StateId { get; set; }
+        
         public string StateName { get; set; }
         public int TodayTests { get; set; }
         public int TodayConfirmedCases { get; set; }

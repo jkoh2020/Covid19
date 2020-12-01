@@ -79,7 +79,12 @@ namespace Covid19Tracker.WebAPI.Controllers
         {
            CountyDataService countyDataService = CreateService();
             var countyData = countyDataService.GetCountyDataById(id);
-            return Ok(countyData);
+            if (countyData != null)
+            {
+                return Ok(countyData);
+            }
+
+            return NotFound(); // 404
         }
 
     }

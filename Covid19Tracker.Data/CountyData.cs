@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 namespace Covid19Tracker.Data
 {
     public class CountyData
-    {
-        
+    { 
         [Key]
         public int DataId { get; set; }
+        public DateTime Date { get; set; }
         public int CountyId { get; set; }
         public string CountyName { get; set; }
         public int TodayTests{get;set;}
