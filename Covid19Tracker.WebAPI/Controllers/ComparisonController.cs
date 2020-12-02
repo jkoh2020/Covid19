@@ -130,8 +130,8 @@ namespace Covid19Tracker.WebAPI.Controllers
                 StateTotalTests = state.StateData.Sum(x => x.TodayTests),
                 StateTotalConfirmedCases = Convert.ToDouble(state.StateData.Sum(x => x.TodayConfirmedCases)),
                 StateTotalDeaths = Convert.ToDouble(state.StateData.Sum(x => x.TodayDeaths)),
-                StateFatalityRate = Convert.ToDouble(state.StateData.Sum(x => x.TodayDeaths)) / state.StateData.Sum(x => x.TodayConfirmedCases),
-                StatePositivePercentage = Convert.ToDouble(state.StateData.Sum(x => x.TodayConfirmedCases)) / state.Population,
+                StateFatalityRate = Math.Round((Convert.ToDouble(state.StateData.Sum(x => x.TodayDeaths)) / state.StateData.Sum(x => x.TodayConfirmedCases)) * 100, 2),
+                StatePositivePercentage = Math.Round((Convert.ToDouble(state.StateData.Sum(x => x.TodayConfirmedCases)) / state.Population) * 100, 2),
 
                 SecondStateId = secondState.StateId,
                 SecondStateName = secondState.StateName,
