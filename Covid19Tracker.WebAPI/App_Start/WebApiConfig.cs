@@ -32,7 +32,18 @@ namespace Covid19Tracker.WebAPI
                 name: "ControllerAndAction",
                 routeTemplate: "api/{controller}/{countyId}/{stateId}"
                 );
-                
+
+            //config.Routes.MapHttpRoute(
+            //    name: "ControllerAndAction",
+            //    routeTemplate: "api/{controller}/{stateId}/{secondStateId}"
+            //    );
+
+            //config.Routes.MapHttpRoute(
+            //    name: "ControllerAndAction",
+            //    routeTemplate: "api/{controller}/{countyId}/{secondCountyId}"
+            //    );
+
+
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Covid19ConsoleApp
         {
             string response = await client.GetStringAsync("https://corona.lmao.ninja/v2/states/Indiana");
             //Console.WriteLine(response); // print out JSON
-
+           
             //Console.ReadLine();
             Todo state = JsonConvert.DeserializeObject<Todo>(response); // Convert JSON into C#
 
