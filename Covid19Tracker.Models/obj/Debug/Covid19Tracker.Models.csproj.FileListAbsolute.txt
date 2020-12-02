@@ -14,3 +14,6 @@ C:\SD69Blue\Covid19Tracker\Covid19Tracker.Models\bin\Debug\EntityFramework.SqlSe
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\SD69Blue\Covid19Tracker\Covid19Tracker.Models\obj\Debug\Covid19Tracker.Models.csproj.CopyComplete
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Models\bin\Debug\Covid19Tracker.Data.dll
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Models\bin\Debug\Covid19Tracker.Data.pdb
+C:\SD69Blue\Covid19Tracker\Covid19Tracker.Models\bin\Debug\Covid19Tracker.Data.dll.config

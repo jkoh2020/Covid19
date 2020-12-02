@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 namespace Covid19Tracker.WebAPI
@@ -16,7 +17,7 @@ namespace Covid19Tracker.WebAPI
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
-
+           // config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             // Web API routes
             config.MapHttpAttributeRoutes();
 
@@ -25,6 +26,24 @@ namespace Covid19Tracker.WebAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // create to use two different id in one controller. This is very important and useful.
+            config.Routes.MapHttpRoute(
+                name: "ControllerAndAction",
+                routeTemplate: "api/{controller}/{countyId}/{stateId}"
+                );
+
+            //config.Routes.MapHttpRoute(
+            //    name: "ControllerAndAction",
+            //    routeTemplate: "api/{controller}/{stateId}/{secondStateId}"
+            //    );
+
+            //config.Routes.MapHttpRoute(
+            //    name: "ControllerAndAction",
+            //    routeTemplate: "api/{controller}/{countyId}/{secondCountyId}"
+            //    );
+
+
         }
     }
 }
