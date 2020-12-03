@@ -120,6 +120,7 @@ namespace Covid19Tracker.WebAPI.Controllers
                 return NotFound();
             }
 
+            
             StateToState compare = new StateToState
 
             {
@@ -145,6 +146,6 @@ namespace Covid19Tracker.WebAPI.Controllers
             };
 
             return Ok(compare);
-        }
+        }   
     }
 }
